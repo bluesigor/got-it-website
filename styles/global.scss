@@ -1,0 +1,87 @@
+@import './components/AboutCarousel.scss';
+@import './components/About.scss';
+@import './components/Banner.scss';
+@import './components/BlogCard.scss';
+@import './components/BlogPage.scss';
+@import './components/BlogSection.scss';
+@import './components/Build.scss';
+@import './components/CanadianCenter.scss';
+@import './components/CareerPage.scss';
+@import './components/ContactUs.scss';
+@import './components/Design.scss';
+@import './components/Dedicated.scss';
+@import './components/Examples.scss';
+@import './components/Footer.scss';
+@import './components/GoodFirms.scss';
+@import './components/Header.scss';
+@import './components/HolyPerogy.scss';
+@import './components/Home.scss';
+@import './components/HomeCarousel.scss';
+@import './components/Ivala.scss';
+@import './components/Miia.scss';
+@import './components/MobileSwitcher.scss';
+@import './components/Mobile.scss';
+@import './components/NewWebsite.scss';
+@import './components/NewMe.scss';
+@import './components/PageNotFound.scss';
+@import './components/Portfolio.scss';
+@import './components/Positions.scss';
+@import './components/RehabFinder.scss';
+@import './components/Reno.scss';
+@import './components/TopCompany.scss';
+@import './components/TeamServices.scss';
+@import './components/Technologies.scss';
+@import './components/Web.scss';
+@import './components/WebLifecycle.scss';
+@import './components/WebLifecycleCard.scss';
+@import './components/Xpay.scss';
+@import './mixins.scss';
+@import './fonts.scss';
+html {
+    scroll-behavior: smooth;
+    --animate-duration: 1s;
+    --animate-delay: 1s;
+    --animate-repeat: 1;
+    &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    line-height: 1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.animated {
+    @include onTablet {
+        animation: none;
+    }
+}
