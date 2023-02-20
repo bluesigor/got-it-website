@@ -25,18 +25,16 @@ export const Home = () => {
       <section className="home__main main">
         <div className="main__container container">
           <div className="container__bg">
-            <div className="container__bg-img">
-              <Image
-                src={require("../public/photos/home/main-gen.png")}
-                alt="main bg"
-              />
-            </div>
-            <div className="container__bg-mobi">
-              <Image
-                src={require("../public/photos/home/main-mob.png")}
-                alt="main bg"
-              />
-            </div>
+            <Image
+              className="container__bg-img"
+              src={require("../public/photos/home/main-gen.png")}
+              alt="main bg"
+            />
+            <Image
+              className="container__bg-mobi"
+              src={require("../public/photos/home/main-mob.png")}
+              alt="main bg"
+            />
           </div>
           <div className="container__info">
             <h1 className="container__info-title">
@@ -65,9 +63,11 @@ export const Home = () => {
           </p>
           <div className="benefits__illustration illustration">
             <div className="illustration__box">
-              <div className="illustration__box-photo">
-                <Image src={quality} alt="benefits target" />
-              </div>
+              <Image
+                className="illustration__box-photo"
+                src={quality}
+                alt="benefits target"
+              />
               <h3 className="illustration__box-name">High Quality</h3>
               <p className="illustration__box-small">
                 We invest all our years of experience in solving your problems,
@@ -75,9 +75,11 @@ export const Home = () => {
               </p>
             </div>
             <div className="illustration__box">
-              <div className="illustration__box-photo">
-                <Image src={clock} alt="benefits clock" />
-              </div>
+              <Image
+                className="illustration__box-photo"
+                src={clock}
+                alt="benefits clock"
+              />
               <h3 className="illustration__box-name">Our Punctuality</h3>
               <p className="illustration__box-small">
                 We make every effort to ensure that the product is not only high
@@ -85,9 +87,11 @@ export const Home = () => {
               </p>
             </div>
             <div className="illustration__box">
-              <div className="illustration__box-photo">
-                <Image src={cost} alt="benefits money" />
-              </div>
+              <Image
+                className="illustration__box-photo"
+                src={cost}
+                alt="benefits money"
+              />
               <h3 className="illustration__box-name">Cost Efficiency</h3>
               <p className="illustration__box-small">
                 Great solutions for your business can be available to you, and
@@ -115,9 +119,11 @@ export const Home = () => {
               className="help__items-example example"
             >
               <span className="example__box">
-                <div className="example__box-picture">
-                  <Image src={uiUx} alt="UI/UX Design" />
-                </div>
+                <Image
+                  className="example__box-picture"
+                  src={uiUx}
+                  alt="UI/UX Design"
+                />
               </span>
               <p className="example__txt">UX/UI Design</p>
             </Link>
@@ -126,9 +132,11 @@ export const Home = () => {
               className="help__items-example example"
             >
               <span className="example__box">
-                <div className="example__box-picture">
-                  <Image src={conversation} alt="Conversation" />
-                </div>
+                <Image
+                  className="example__box-picture"
+                  src={conversation}
+                  alt="Conversation"
+                />
               </span>
               <p className="example__txt">Dedicated team services</p>
             </Link>
@@ -137,9 +145,11 @@ export const Home = () => {
               className="help__items-example example"
             >
               <span className="example__box">
-                <div className="example__box-picture">
-                  <Image src={mobile} alt="Mobile Development" />
-                </div>
+                <Image
+                  className="example__box-picture"
+                  src={mobile}
+                  alt="Mobile Development"
+                />
               </span>
               <p className="example__txt">Mobile Development </p>
             </Link>
@@ -148,9 +158,11 @@ export const Home = () => {
               className="help__items-example example"
             >
               <span className="example__box">
-                <div className="example__box-picture">
-                  <Image src={web} alt="Web Development" />
-                </div>
+                <Image
+                  className="example__box-picture"
+                  src={web}
+                  alt="Web Development"
+                />
               </span>
               <p className="example__txt">Web Development</p>
             </Link>

@@ -134,12 +134,10 @@
       }
     }
     &-img {
+      object-fit: cover !important;
+      width: 100% !important;
       @include onMobile {
         display: none;
-      }
-      & > img {
-        object-fit: cover;
-        width: 100%;
       }
     }
   }
