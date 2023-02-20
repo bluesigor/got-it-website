@@ -1,8 +1,8 @@
 import { RehabFinder } from "@/components/RehabFinder";
 import React from "react";
 
-const rehab_finder = () => {
+const RehabFinderPage = () => {
   return <RehabFinder />;
 };
 
-export default rehab_finder;
+export default RehabFinderPage;

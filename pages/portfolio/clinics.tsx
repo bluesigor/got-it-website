@@ -1,8 +1,8 @@
 import { NewMe } from "@/components/NewMe";
 import React from "react";
 
-const clinics = () => {
+const Clinics = () => {
   return <NewMe />;
 };
 
-export default clinics;
+export default Clinics;

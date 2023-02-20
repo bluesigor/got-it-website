@@ -1,8 +1,8 @@
 import { Miia } from "@/components/Miia";
 import React from "react";
 
-const miia = () => {
+const MiiaPage = () => {
   return <Miia />;
 };
 
-export default miia;
+export default MiiaPage;

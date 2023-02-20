@@ -1,16 +1,16 @@
-import { FrontEnd } from "@/components/career/FrontEnd";
+import { Career } from "@/components/career/Career";
 import Head from "next/head";
 import React from "react";
 
-const middleFrontendPosition = () => {
+const CareerPage = () => {
   return (
     <>
       <Head>
         <title>Got It Agency: Career - Find your dream job</title>
       </Head>
-      <FrontEnd />
+      <Career />
     </>
   );
 };
 
-export default middleFrontendPosition;
+export default CareerPage;

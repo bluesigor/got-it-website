@@ -4,12 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 
 import polygon from "../../public/photos/polygon.svg";
+import { useRouter } from "next/router";
+
+enum SelectionRoute {
+  Home = "/",
+  DedicatedServices = "/services/dedicated-team-services",
+  MobileDevelopment = "/services/mobile-development",
+  UiUxDesign = "/services/ui-ux-design",
+  WebDevelopment = "/services/web-development",
+  Portfolio = "/portfolio",
+  AboutUs = "/company/about-us",
+  Career = "career",
+  Blog = "/company/blog",
+  ContactUs = "/contact-us",
+}
 
 export const Header = () => {
   const [firstSubmenu, setFirstSubmenu] = useState<boolean>(false);
   const [secondSubmenu, setSecondSubmenu] = useState<boolean>(false);
   const [burger, setBurger] = useState<boolean>(false);
   const [smallMenu, setSmallMenu] = useState<boolean>(false);
+
+  const { pathname } = useRouter();
+
+  console.log(pathname);
 
   return (
     <header className="header">
@@ -24,15 +42,32 @@ export const Header = () => {
         <div className="heading__menu menu">
           <ul className="menu__links links">
             <li className="links__link">
-              <Link href="/" className="links__link-item">
+              <Link
+                href="/"
+                className={classNames({
+                  "links__link-item": true,
+                  "link-activated": pathname === SelectionRoute.Home,
+                })}
+              >
                 HOME
               </Link>
             </li>
             <li
               className="links__link parent"
               onMouseEnter={() => setFirstSubmenu(true)}
-              onMouseLeave={() => setFirstSubmenu(false)}>
-              <Link href="/" className="links__link-item">
+              onMouseLeave={() => setFirstSubmenu(false)}
+            >
+              <Link
+                href="/"
+                className={classNames({
+                  "links__link-item": true,
+                  "link-activated":
+                    pathname === SelectionRoute.UiUxDesign ||
+                    pathname === SelectionRoute.MobileDevelopment ||
+                    pathname === SelectionRoute.WebDevelopment ||
+                    pathname === SelectionRoute.DedicatedServices,
+                })}
+              >
                 SERVICES
               </Link>
               {firstSubmenu && (
@@ -40,28 +75,32 @@ export const Header = () => {
                   <li className="submenu__link">
                     <Link
                       href="/services/ui-ux-design/"
-                      className="submenu__link-text">
+                      className="submenu__link-text"
+                    >
                       UI/UX Design
                     </Link>
                   </li>
                   <li className="submenu__link">
                     <Link
                       href="/services/web-development/"
-                      className="submenu__link-text">
+                      className="submenu__link-text"
+                    >
                       Web Development
                     </Link>
                   </li>
                   <li className="submenu__link">
                     <Link
                       href="/services/mobile-development/"
-                      className="submenu__link-text">
+                      className="submenu__link-text"
+                    >
                       Mobile Development
                     </Link>
                   </li>
                   <li className="submenu__link">
                     <Link
                       href="/services/dedicated-team-services/"
-                      className="submenu__link-text">
+                      className="submenu__link-text"
+                    >
                       Dedicated Team Services
                     </Link>
                   </li>
@@ -69,15 +108,31 @@ export const Header = () => {
               )}
             </li>
             <li className="links__link">
-              <Link href="/portfolio/" className="links__link-item">
+              <Link
+                href="/portfolio"
+                className={classNames({
+                  "links__link-item": true,
+                  "link-activated": pathname === SelectionRoute.Portfolio,
+                })}
+              >
                 PORTFOLIO
               </Link>
             </li>
             <li
               className="links__link parent"
               onMouseEnter={() => setSecondSubmenu(true)}
-              onMouseLeave={() => setSecondSubmenu(false)}>
-              <Link href="/" className="links__link-item">
+              onMouseLeave={() => setSecondSubmenu(false)}
+            >
+              <Link
+                href="/"
+                className={classNames({
+                  "links__link-item": true,
+                  "link-activated":
+                    pathname === SelectionRoute.AboutUs ||
+                    pathname === SelectionRoute.Blog ||
+                    pathname.split("/").includes(SelectionRoute.Career),
+                })}
+              >
                 COMPANY
               </Link>
               {secondSubmenu && (
@@ -85,14 +140,16 @@ export const Header = () => {
                   <li className="submenu__link">
                     <Link
                       href="/company/about-us/"
-                      className="submenu__link-text">
+                      className="submenu__link-text"
+                    >
                       About Us
                     </Link>
                   </li>
                   <li className="submenu__link">
                     <Link
                       href="/company/career/"
-                      className="submenu__link-text">
+                      className="submenu__link-text"
+                    >
                       Career
                     </Link>
                   </li>
@@ -105,7 +162,13 @@ export const Header = () => {
               )}
             </li>
             <li className="links__link">
-              <Link href="/contact-us/" className="links__link-item">
+              <Link
+                href="/contact-us/"
+                className={classNames({
+                  "links__link-item": true,
+                  "link-activated": pathname === SelectionRoute.ContactUs,
+                })}
+              >
                 CONTACT US
               </Link>
             </li>
@@ -116,22 +179,26 @@ export const Header = () => {
           onClick={() => {
             setBurger(!burger);
             setSmallMenu(false);
-          }}>
+          }}
+        >
           <div
             className={classNames({
               burger__first: true,
               opnd: burger,
-            })}></div>
+            })}
+          ></div>
           <div
             className={classNames({
               burger__second: true,
               opnd: burger,
-            })}></div>
+            })}
+          ></div>
           <div
             className={classNames({
               burger__third: true,
               opnd: burger,
-            })}></div>
+            })}
+          ></div>
         </div>
       </div>
       {burger && (
@@ -142,7 +209,8 @@ export const Header = () => {
                 setBurger(false);
                 setSmallMenu(false);
               }}
-              className="nav__list-link">
+              className="nav__list-link"
+            >
               <Link href="/">HOME</Link>
             </li>
             <li className="nav__list-srv srv">
@@ -150,7 +218,8 @@ export const Header = () => {
                 <a
                   onClick={() => setSmallMenu(!smallMenu)}
                   className="srv__box-link"
-                  href="#">
+                  href="#"
+                >
                   SERVICES
                 </a>
                 <div
@@ -158,7 +227,8 @@ export const Header = () => {
                   className={classNames({
                     "srv__box-polygon": true,
                     "polygon-opened": smallMenu,
-                  })}>
+                  })}
+                >
                   <Image src={polygon} alt="polygon" />
                 </div>
               </div>

@@ -25,16 +25,18 @@ export const Home = () => {
       <section className="home__main main">
         <div className="main__container container">
           <div className="container__bg">
-            <Image
-              className="container__bg-img"
-              src={require("../public/photos/home/main-gen.png")}
-              alt="main bg"
-            />
-            <Image
-              className="container__bg-mobi"
-              src={require("../public/photos/home/main-mob.png")}
-              alt="main bg"
-            />
+            <div className="container__bg-img">
+              <Image
+                src={require("../public/photos/home/main-gen.png")}
+                alt="main bg"
+              />
+            </div>
+            <div className="container__bg-mobi">
+              <Image
+                src={require("../public/photos/home/main-mob.png")}
+                alt="main bg"
+              />
+            </div>
           </div>
           <div className="container__info">
             <h1 className="container__info-title">
@@ -42,7 +44,7 @@ export const Home = () => {
             </h1>
             <p className="container__info-desc">
               We`re a design and development agency, located in Eastern Europe
-              that creates and supports awesome web & mobile apps.{" "}
+              that creates and supports awesome web & mobile apps.
             </p>
             <Link href="/portfolio/" className="container__info-click">
               PORTFOLIO
@@ -53,7 +55,8 @@ export const Home = () => {
       <AnimationOnScroll
         animateOnce={true}
         animateIn="animate__fadeInUp"
-        className="animated">
+        className="animated"
+      >
         <section className="home__benefits benefits">
           <h2 className="benefits__title">Our benefits</h2>
           <p className="benefits__description">
@@ -62,11 +65,9 @@ export const Home = () => {
           </p>
           <div className="benefits__illustration illustration">
             <div className="illustration__box">
-              <Image
-                className="illustration__box-photo"
-                src={quality}
-                alt="benefits target"
-              />
+              <div className="illustration__box-photo">
+                <Image src={quality} alt="benefits target" />
+              </div>
               <h3 className="illustration__box-name">High Quality</h3>
               <p className="illustration__box-small">
                 We invest all our years of experience in solving your problems,
@@ -74,11 +75,9 @@ export const Home = () => {
               </p>
             </div>
             <div className="illustration__box">
-              <Image
-                className="illustration__box-photo"
-                src={clock}
-                alt="benefits clock"
-              />
+              <div className="illustration__box-photo">
+                <Image src={clock} alt="benefits clock" />
+              </div>
               <h3 className="illustration__box-name">Our Punctuality</h3>
               <p className="illustration__box-small">
                 We make every effort to ensure that the product is not only high
@@ -86,11 +85,9 @@ export const Home = () => {
               </p>
             </div>
             <div className="illustration__box">
-              <Image
-                className="illustration__box-photo"
-                src={cost}
-                alt="benefits money"
-              />
+              <div className="illustration__box-photo">
+                <Image src={cost} alt="benefits money" />
+              </div>
               <h3 className="illustration__box-name">Cost Efficiency</h3>
               <p className="illustration__box-small">
                 Great solutions for your business can be available to you, and
@@ -103,7 +100,8 @@ export const Home = () => {
       <AnimationOnScroll
         animateOnce={true}
         animateIn="animate__fadeInUp"
-        className="animated">
+        className="animated"
+      >
         <section className="home__help help">
           <h2 className="help__title">We are here to help you with</h2>
           <p className="help__desc">
@@ -114,49 +112,45 @@ export const Home = () => {
           <div className="help__items items">
             <Link
               href="/services/ui-ux-design/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
-                <Image
-                  className="example__box-picture"
-                  src={uiUx}
-                  alt="UI/UX Design"
-                />
+                <div className="example__box-picture">
+                  <Image src={uiUx} alt="UI/UX Design" />
+                </div>
               </span>
               <p className="example__txt">UX/UI Design</p>
             </Link>
             <Link
               href="/services/dedicated-team-services/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
-                <Image
-                  className="example__box-picture"
-                  src={conversation}
-                  alt="Conversation"
-                />
+                <div className="example__box-picture">
+                  <Image src={conversation} alt="Conversation" />
+                </div>
               </span>
               <p className="example__txt">Dedicated team services</p>
             </Link>
             <Link
               href="/services/mobile-development/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
-                <Image
-                  className="example__box-picture"
-                  src={mobile}
-                  alt="Mobile Development"
-                />
+                <div className="example__box-picture">
+                  <Image src={mobile} alt="Mobile Development" />
+                </div>
               </span>
               <p className="example__txt">Mobile Development </p>
             </Link>
             <Link
               href="/services/web-development/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
-                <Image
-                  className="example__box-picture"
-                  src={web}
-                  alt="Web Development"
-                />
+                <div className="example__box-picture">
+                  <Image src={web} alt="Web Development" />
+                </div>
               </span>
               <p className="example__txt">Web Development</p>
             </Link>
@@ -166,7 +160,8 @@ export const Home = () => {
       <AnimationOnScroll
         animateOnce={true}
         animateIn="animate__fadeInUp"
-        className="animated">
+        className="animated"
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -207,7 +202,8 @@ export const Home = () => {
       <AnimationOnScroll
         animateOnce={true}
         animateIn="animate__fadeInUp"
-        className="animated">
+        className="animated"
+      >
         <section className="home__carousel-desktop">
           <HomeCarousel />
         </section>
@@ -215,7 +211,8 @@ export const Home = () => {
       <AnimationOnScroll
         animateOnce={true}
         animateIn="animate__fadeInUp"
-        className="animated">
+        className="animated"
+      >
         <section className="home__carousel-mobile">
           <HomeCarouselMobile />
         </section>
@@ -223,7 +220,8 @@ export const Home = () => {
       <AnimationOnScroll
         animateOnce={true}
         animateIn="animate__fadeInUp"
-        className="animated">
+        className="animated"
+      >
         <section className="home__testimonials testimonials">
           <div className="testimonials__container">
             <div className="testimonials__container-exps expos">
@@ -241,7 +239,8 @@ export const Home = () => {
                 src="https://widget.clutch.co/widgets/get/4?ref_domain=got-it.agency&amp;uid=979763&amp;ref_path=/"
                 height="600px"
                 scrolling="no"
-                title="[iFrameSizer]iframe-0.8731522158075802:0:0:mouseleave:305:8844"></iframe>
+                title="[iFrameSizer]iframe-0.8731522158075802:0:0:mouseleave:305:8844"
+              ></iframe>
             </div>
           </div>
         </section>

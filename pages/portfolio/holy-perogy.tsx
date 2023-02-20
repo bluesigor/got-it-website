@@ -1,8 +1,8 @@
 import React from "react";
 import HolyPerogy from "../../components/HolyPerogy";
 
-const holy_perogy = () => {
+const HolyPerogyPage = () => {
   return <HolyPerogy />;
 };
 
-export default holy_perogy;
+export default HolyPerogyPage;

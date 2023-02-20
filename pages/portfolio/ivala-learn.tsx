@@ -1,8 +1,8 @@
 import { Ivala } from "@/components/Ivala";
 import React from "react";
 
-const ivala_learn = () => {
+const IvalaLearnPage = () => {
   return <Ivala />;
 };
 
-export default ivala_learn;
+export default IvalaLearnPage;
