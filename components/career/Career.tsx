@@ -1,6 +1,6 @@
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Footer } from "../additional/Footer";
 import { Header } from "../additional/Header";
@@ -23,7 +23,17 @@ export const Career = () => {
       <Header />
       <div className="career__container">
         <div className="career__container-entry entry">
-          <div className="entry__desc-images imagebox imagebox-mobile">
+          <motion.div
+            className="entry__desc-images imagebox imagebox-mobile"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.5,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <div className="imagebox__poster">
               <Image
                 className="imagebox__poster-img"
@@ -36,7 +46,7 @@ export const Career = () => {
                 <Image src={bubblesBottom} alt="bubbles" />
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className="entry__desc">
             <h2 className="entry__desc-title">
               Great opportunities with Got It Agency
@@ -50,7 +60,17 @@ export const Career = () => {
               OPEN POSITIONS
             </a>
           </div>
-          <div className="entry__desc-images imagebox imagebox-desktop">
+          <motion.div
+            className="entry__desc-images imagebox imagebox-desktop"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.5,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <div className="imagebox__poster">
               <Image
                 className="imagebox__poster-img"
@@ -63,9 +83,19 @@ export const Career = () => {
                 <Image src={bubblesBottom} alt="bubbles" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp">
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 5,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <section className="career__container-build build">
             <div className="build__desc">
               <h2 className="build__desc-title">Join Got It Agency</h2>
@@ -86,8 +116,18 @@ export const Career = () => {
               />
             </div>
           </section>
-        </AnimationOnScroll>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp">
+        </motion.div>
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 5,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <section className="conditions">
             <div className="conditions__species species">
               <div className="species__image">
@@ -158,8 +198,18 @@ export const Career = () => {
               </div>
             </div>
           </section>
-        </AnimationOnScroll>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp">
+        </motion.div>
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 5,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <section className="openings" id="positions">
             <h2 className="openings__title">Open positions</h2>
             <div className="openings__box">
@@ -249,7 +299,7 @@ export const Career = () => {
               </div>
             </div>
           </section>
-        </AnimationOnScroll>
+        </motion.div>
       </div>
       <Banner />
       <Footer />

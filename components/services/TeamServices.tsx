@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import classNames from "classnames";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import { Header } from "../additional/Header";
 
@@ -48,12 +48,22 @@ export const TeamServices = () => {
       <Header />
       <section className="opening">
         <div className="opening__container">
-          <div className="opening__container-mobi">
+          <motion.div
+            className="opening__container-mobi"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.3,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <Image
               src={require("../../public/photos/services/team/team-mobi.png")}
               alt="team bg"
             />
-          </div>
+          </motion.div>
           <div className="opening__container-about about">
             <h1 className="about__title">
               We provide you with<span>the bust quality</span>
@@ -69,20 +79,50 @@ export const TeamServices = () => {
             </Link>
           </div>
           <div className="opening__container-adding adding">
-            <h2 className="adding__title">
+            <motion.h2
+              className="adding__title"
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.4,
+              }}
+              initial={{ opacity: 0 }}
+            >
               Dedicated<span>Team Service</span>
-            </h2>
-            <div className="adding__laptop">
+            </motion.h2>
+            <motion.div
+              className="adding__laptop"
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.7,
+              }}
+              initial={{ opacity: 0 }}
+            >
               <Image src={laptop_new} alt="laptop" />
-            </div>
+            </motion.div>
           </div>
         </div>
-        <div className="opening__letter">
+        <motion.div
+          className="opening__letter"
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.4,
+          }}
+          initial={{ opacity: 0 }}
+        >
           <Image
             src={require("../../public/photos/services/team/t.png")}
             alt="T letter"
           />
-        </div>
+        </motion.div>
         <div className="opening__bg">
           <Image
             src={require("../../public/photos/services/team/tot-bg.png")}
@@ -97,10 +137,17 @@ export const TeamServices = () => {
         </div>
       </section>
       <section className="build">
-        <AnimationOnScroll
-          animateOnce={true}
-          animateIn="animate__fadeInUp"
-          className="animated">
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 2,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <div className="build__desc">
             <h2 className="build__desc-title">
               Dedicated team<span>approach: overview</span>
@@ -117,7 +164,7 @@ export const TeamServices = () => {
               </p>
             </div>
           </div>
-        </AnimationOnScroll>
+        </motion.div>
         <div className="build__bg">
           <Image
             className="build__bg-img"
@@ -126,10 +173,17 @@ export const TeamServices = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="benef">
           <h2 className="benef__title">
             Benefits of our dedicated development team
@@ -145,7 +199,8 @@ export const TeamServices = () => {
                 onClick={() => {
                   resetAll();
                   setFlexible(!flexible);
-                }}>
+                }}
+              >
                 <div className="opener__switcher">
                   <p className="opener__switcher-title">
                     Flexible development model
@@ -154,7 +209,8 @@ export const TeamServices = () => {
                     className={classNames({
                       "opener__switcher-icon": true,
                       bord: flexible,
-                    })}>
+                    })}
+                  >
                     {flexible ? (
                       <Image src={minus} alt="minus icon" />
                     ) : (
@@ -166,12 +222,14 @@ export const TeamServices = () => {
                   className={classNames({
                     opener__desc: true,
                     resize: flexible,
-                  })}>
+                  })}
+                >
                   <p
                     className={classNames({
                       "opener__desc-text": true,
                       active: flexible,
-                    })}>
+                    })}
+                  >
                     Adjusting the size of your remote team to your actual needs
                     has never been easier and faster than when you are paying on
                     a monthly basis. All you need is to send a month`s notice to
@@ -190,20 +248,23 @@ export const TeamServices = () => {
                 onClick={() => {
                   resetAll();
                   setFocus(!focus);
-                }}>
+                }}
+              >
                 <div className="opener__switcher">
                   <p
                     className={classNames({
                       "opener__switcher-title": true,
                       whitening: focus,
-                    })}>
+                    })}
+                  >
                     Focus on core business activites
                   </p>
                   <div
                     className={classNames({
                       "opener__switcher-icon": true,
                       bord: focus,
-                    })}>
+                    })}
+                  >
                     {focus ? (
                       <Image src={minus} alt="minus icon" />
                     ) : (
@@ -215,12 +276,14 @@ export const TeamServices = () => {
                   className={classNames({
                     opener__desc: true,
                     resize: focus,
-                  })}>
+                  })}
+                >
                   <p
                     className={classNames({
                       "opener__desc-text": true,
                       active: focus,
-                    })}>
+                    })}
+                  >
                     Multitasking kills productivity. Staying focused on one
                     project 100% of the time, as dedicated teams do, increases
                     productivity exponentially. Outsourcing a function to
@@ -239,20 +302,23 @@ export const TeamServices = () => {
                 onClick={() => {
                   resetAll();
                   setTime(!time);
-                }}>
+                }}
+              >
                 <div className="opener__switcher">
                   <p
                     className={classNames({
                       "opener__switcher-title": true,
                       whitening: time,
-                    })}>
+                    })}
+                  >
                     Time and cost effectiveness
                   </p>
                   <div
                     className={classNames({
                       "opener__switcher-icon": true,
                       bord: time,
-                    })}>
+                    })}
+                  >
                     {time ? (
                       <Image src={minus} alt="minus icon" />
                     ) : (
@@ -264,12 +330,14 @@ export const TeamServices = () => {
                   className={classNames({
                     opener__desc: true,
                     resize: time,
-                  })}>
+                  })}
+                >
                   <p
                     className={classNames({
                       "opener__desc-text": true,
                       active: time,
-                    })}>
+                    })}
+                  >
                     Higher rates of software developers` fees in the US and
                     Canada make this labor market less attractive for clients
                     who know the real value of money. With a dedicated software
@@ -290,20 +358,23 @@ export const TeamServices = () => {
                 onClick={() => {
                   resetAll();
                   setExpertise(!expertise);
-                }}>
+                }}
+              >
                 <div className="opener__switcher">
                   <p
                     className={classNames({
                       "opener__switcher-title": true,
                       whitening: expertise,
-                    })}>
+                    })}
+                  >
                     Expertise
                   </p>
                   <div
                     className={classNames({
                       "opener__switcher-icon": true,
                       bord: expertise,
-                    })}>
+                    })}
+                  >
                     {expertise ? (
                       <Image src={minus} alt="minus icon" />
                     ) : (
@@ -315,12 +386,14 @@ export const TeamServices = () => {
                   className={classNames({
                     opener__desc: true,
                     resize: expertise,
-                  })}>
+                  })}
+                >
                   <p
                     className={classNames({
                       "opener__desc-text": true,
                       active: expertise,
-                    })}>
+                    })}
+                  >
                     The primary drivers of hiring remote teams are global
                     expansion and unlimited access to the best talent worldwide.
                     Talent acquisition can be a problem due to the scarcity of a
@@ -343,20 +416,23 @@ export const TeamServices = () => {
                 onClick={() => {
                   resetAll();
                   setBroader(!broader);
-                }}>
+                }}
+              >
                 <div className="opener__switcher">
                   <p
                     className={classNames({
                       "opener__switcher-title": true,
                       whitening: broader,
-                    })}>
+                    })}
+                  >
                     Long-term engagement
                   </p>
                   <div
                     className={classNames({
                       "opener__switcher-icon": true,
                       bord: broader,
-                    })}>
+                    })}
+                  >
                     {broader ? (
                       <Image src={minus} alt="minus icon" />
                     ) : (
@@ -368,12 +444,14 @@ export const TeamServices = () => {
                   className={classNames({
                     opener__desc: true,
                     resize: broader,
-                  })}>
+                  })}
+                >
                   <p
                     className={classNames({
                       "opener__desc-text": true,
                       active: broader,
-                    })}>
+                    })}
+                  >
                     If you are looking for stability and long-term
                     collaboration, signing a contract with a dedicated
                     development team is a winning business strategy. Finding a
@@ -391,7 +469,7 @@ export const TeamServices = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <section className="processing">
         <div className="processing__container">
           <div className="processing__container-build build">
@@ -467,10 +545,17 @@ export const TeamServices = () => {
           />
         </div>
       </div>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="model">
           <h2 className="model__title">Dedicated development team model</h2>
           <div className="model__container">
@@ -542,7 +627,7 @@ export const TeamServices = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <section className="technologies">
         <div className="technologies__info info">
           <div className="info__text">
@@ -598,10 +683,17 @@ export const TeamServices = () => {
           </div>
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -650,7 +742,7 @@ export const TeamServices = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <Banner />
       <Footer />
     </div>

@@ -4,13 +4,15 @@ import deployment from "../../public/photos/services/ui/deployment.svg";
 import implementation_new from "../../public/photos/services/ui/deployment-new.svg";
 import uiUX from "../../public/photos/services/ui/mobile-ui.svg";
 import web from "../../public/photos/services/ui/web.svg";
-import motion from "../../public/photos/services/ui/motion.svg";
+import motionPh from "../../public/photos/services/ui/motion.svg";
 import phone_top from "../../public/photos/services/ui/phone-top.svg";
 import new_me from "../../public/photos/home/new-me.svg";
 import rehab from "../../public/photos/home/rehab.svg";
 import theme from "../../public/photos/services/ui/theme.svg";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+
 import Image from "next/image";
+
+import { motion } from "framer-motion";
 import { Header } from "../additional/Header";
 import Link from "next/link";
 import { Banner } from "../additional/Banner";
@@ -22,12 +24,22 @@ export const Design = () => {
       <Header />
       <section className="introducion">
         <div className="introducion__container">
-          <div className="introducion__container-mobi">
+          <motion.div
+            className="introducion__container-mobi"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.3,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <Image
               src={require("../../public/photos/services/ui/ui-mobi-top.png")}
               alt="mobi icon"
             />
-          </div>
+          </motion.div>
           <div className="introducion__container-intro intro">
             <h2 className="intro__title">
               UX design is a still a relatively new field
@@ -41,18 +53,48 @@ export const Design = () => {
               GET IN TOUCH
             </Link>
           </div>
-          <div className="introducion__container-big">
+          <motion.div
+            className="introducion__container-big"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.7,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <h2>UI/UX Design</h2>
-          </div>
-          <div className="introducion__container-phone">
+          </motion.div>
+          <motion.div
+            className="introducion__container-phone"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.6,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <Image src={phone_top} alt="phone" />
-          </div>
-          <div className="introducion__container-letter">
+          </motion.div>
+          <motion.div
+            className="introducion__container-letter"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.4,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <Image
               src={require("../../public/photos/services/ui/d.png")}
               alt="letter"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="introducion__bg">
           <Image
@@ -63,10 +105,17 @@ export const Design = () => {
         </div>
       </section>
       <section className="build">
-        <AnimationOnScroll
-          animateOnce={true}
-          animateIn="animate__fadeInUp"
-          className="animated">
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 2,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <div className="build__desc">
             <h2 className="build__desc-title">
               Our goal is to develop the best design for you
@@ -90,7 +139,7 @@ export const Design = () => {
               </p>
             </div>
           </div>
-        </AnimationOnScroll>
+        </motion.div>
         <div className="build__bg">
           <Image
             className="build__bg-img"
@@ -99,10 +148,17 @@ export const Design = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 7,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="presentation">
           <h2 className="presentation__title">
             Design for Mobile and Web production
@@ -146,7 +202,7 @@ export const Design = () => {
               <div className="poster__icon">
                 <Image
                   className="poster__icon-item"
-                  src={motion}
+                  src={motionPh}
                   alt="motion design"
                 />
               </div>
@@ -159,16 +215,23 @@ export const Design = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <section className="design__process process">
         <h2 className="process__title">UI/UX Design process</h2>
         <div className="process__container">
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInUp"
-            className="animated">
+          <div>
             <div className="process__container-row row">
-              <div className="row__box">
+              <motion.div
+                className="row__box"
+                animate={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 2,
+                  delay: 1.5,
+                }}
+                initial={{ opacity: 0 }}
+              >
                 <div className="row__box-icon">
                   <Image src={analysis} alt="analysis" />
                 </div>
@@ -180,8 +243,18 @@ export const Design = () => {
                     think.
                   </p>
                 </div>
-              </div>
-              <div className="row__box">
+              </motion.div>
+              <motion.div
+                className="row__box"
+                animate={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 4,
+                  delay: 1.5,
+                }}
+                initial={{ opacity: 0 }}
+              >
                 <div className="row__box-icon">
                   <Image src={design} alt="design" />
                 </div>
@@ -193,25 +266,39 @@ export const Design = () => {
                     with the user and a thorough design specification.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInUp"
-            className="animated">
+          </div>
+          <motion.div
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 7,
+              delay: 1.5,
+            }}
+            initial={{ y: 400, opacity: 0 }}
+          >
             <div className="process__container-central central">
               <div className="central__icon">
                 <Image className="central__icon-image" src={theme} alt="icon" />
               </div>
             </div>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInUp"
-            className="animated">
+          </motion.div>
+          <div>
             <div className="process__container-row row">
-              <div className="row__box">
+              <motion.div
+                className="row__box"
+                animate={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 6,
+                  delay: 1.5,
+                }}
+                initial={{ opacity: 0 }}
+              >
                 <div className="row__box-icon">
                   <Image src={deployment} alt="deployment" />
                 </div>
@@ -223,8 +310,18 @@ export const Design = () => {
                     our usability goals frome Phase I
                   </p>
                 </div>
-              </div>
-              <div className="row__box">
+              </motion.div>
+              <motion.div
+                className="row__box"
+                animate={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 8,
+                  delay: 1.5,
+                }}
+                initial={{ opacity: 0 }}
+              >
                 <div className="row__box-icon">
                   <Image src={implementation_new} alt="implementation" />
                 </div>
@@ -235,9 +332,9 @@ export const Design = () => {
                     Converting the prototype into a more refined final product.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </AnimationOnScroll>
+          </div>
         </div>
         <div className="process__flow">
           <Image
@@ -247,10 +344,17 @@ export const Design = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 7,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -299,7 +403,7 @@ export const Design = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <Banner />
       <Footer />
     </div>
