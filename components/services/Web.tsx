@@ -71,6 +71,7 @@ export const Web = () => {
                 duration: 0.7,
                 delay: 0.5,
               }}
+              initial={{ opacity: 0 }}
             >
               Web <span>Development</span>
             </motion.h2>
