@@ -24,6 +24,7 @@ export const Portfolio = () => {
                   className="case__picture-img new-me-portfolio"
                   src={new_me}
                   alt="NewMe Clinics"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">
@@ -37,6 +38,7 @@ export const Portfolio = () => {
                   className="case__picture-img"
                   src={require("../public/photos/portfolio/miia.png")}
                   alt="Miia Shop"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">
@@ -50,6 +52,7 @@ export const Portfolio = () => {
                   className="case__picture-img"
                   src={rehab_new}
                   alt="Rehab Finder"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">
@@ -65,6 +68,7 @@ export const Portfolio = () => {
                   className="case__picture-img"
                   src={canadian_new}
                   alt="Ivala learn"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">
@@ -81,7 +85,12 @@ export const Portfolio = () => {
             </Link>
             <Link href="/portfolio/canadian/" className="col__case case">
               <div className="case__picture">
-                <Image className="case__picture-img" src={reno} alt="Reno" />
+                <Image
+                  className="case__picture-img"
+                  src={reno}
+                  alt="Reno"
+                  placeholder="blur"
+                />
               </div>
               <div className="case__text">
                 <h2 className="case__text-title">Reno</h2>
@@ -96,6 +105,7 @@ export const Portfolio = () => {
                   className="case__picture-img"
                   src={holy_perogy}
                   alt="Holy Perogy"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">
@@ -111,6 +121,7 @@ export const Portfolio = () => {
                   className="case__picture-img"
                   src={require("../public/photos/portfolio/black-p.png")}
                   alt="Unskool"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">
@@ -124,6 +135,7 @@ export const Portfolio = () => {
                   className="case__picture-img"
                   src={require("../public/photos/portfolio/white-p.png")}
                   alt="Unskool"
+                  placeholder="blur"
                 />
               </div>
               <div className="case__text">

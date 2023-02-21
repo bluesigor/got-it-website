@@ -1,8 +1,8 @@
 import { CanadianCenter } from "@/components/CanadianCenter";
 import React from "react";
 
-const canadian_center = () => {
+const CanadianCenterPage = () => {
   return <CanadianCenter />;
 };
 
-export default canadian_center;
+export default CanadianCenterPage;

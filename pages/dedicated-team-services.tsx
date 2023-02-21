@@ -1,8 +1,16 @@
 import { Dedicated } from "@/components/blog/Dedicated";
+import Head from "next/head";
 import React from "react";
 
-const dedicated_team_services = () => {
-  return <Dedicated />;
+const DedicatedTeamServicesPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Got It Agency: Blog about News, Development & Design</title>
+      </Head>
+      <Dedicated />
+    </>
+  );
 };
 
-export default dedicated_team_services;
+export default DedicatedTeamServicesPage;

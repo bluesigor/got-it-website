@@ -1,6 +1,6 @@
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Header } from "../additional/Header";
 
@@ -13,6 +13,7 @@ import kotlin from "../../public/photos/services/mobile/kotlin.svg";
 import flutter from "../../public/photos/services/mobile/flutter.svg";
 import new_me from "../../public/photos/home/new-me.svg";
 import rehab from "../../public/photos/home/rehab.svg";
+
 import { Banner } from "../additional/Banner";
 import { Footer } from "../additional/Footer";
 import { MobileSwitcher } from "../additional/MobileSwitcher";
@@ -35,28 +36,71 @@ export const Mobile = () => {
               Does your business have a mobile app?
             </h1>
             <p className="gen__intro-text">
-              {" "}
               We develop fully functional mobile applications, available online
-              to millions of users in any country of the world.{" "}
+              to millions of users in any country of the world.
             </p>
             <Link href="/contact-us/" className="gen__intro-link">
               GET IN TOUCH
             </Link>
           </div>
           <div className="gen__phone">
-            <p className="gen__phone-mob">Mobile</p>
-            <div className="gen__phone-image">
+            <motion.p
+              className="gen__phone-mob"
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.6,
+              }}
+              initial={{ opacity: 0 }}
+            >
+              Mobile
+            </motion.p>
+            <motion.div
+              className="gen__phone-image"
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+              }}
+              initial={{ opacity: 0 }}
+            >
               <Image src={main_mob} alt="mobile phone" />
-            </div>
+            </motion.div>
           </div>
         </div>
-        <div className="start__letter">
+        <motion.div
+          className="start__letter"
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.3,
+          }}
+          initial={{ opacity: 0 }}
+        >
           <Image
             src={require("../../public/photos/services/mobile/m.png")}
             alt="letter m"
           />
-        </div>
-        <p className="start__additional">App</p>
+        </motion.div>
+        <motion.p
+          className="start__additional"
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.6,
+          }}
+          initial={{ opacity: 0 }}
+        >
+          App
+        </motion.p>
         <div className="start__bg">
           <Image
             src={require("../../public/photos/services/mobile/top-bg.png")}
@@ -65,10 +109,17 @@ export const Mobile = () => {
         </div>
       </section>
       <section className="build">
-        <AnimationOnScroll
-          animateOnce={true}
-          animateIn="animate__fadeInUp"
-          className="animated">
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 2,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <div className="build__desc">
             <h2 className="build__desc-title">
               Your Business is always close to you!
@@ -85,7 +136,7 @@ export const Mobile = () => {
               </p>
             </div>
           </div>
-        </AnimationOnScroll>
+        </motion.div>
         <div className="build__bg">
           <Image
             className="build__bg-img"
@@ -97,33 +148,54 @@ export const Mobile = () => {
       <section className="phones">
         <div className="phones__container">
           <div className="phones__container-images images images-desktop">
-            <AnimationOnScroll
-              animateOnce={true}
-              animateIn="animate__fadeInUp"
-              className="animated">
+            <motion.div
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 2,
+                delay: 1.5,
+              }}
+              initial={{ y: 400, opacity: 0 }}
+            >
               <div className="images__ios">
                 <Image
                   src={require("../../public/photos/services/mobile/ios-phone.png")}
                   alt="ios phone"
                 />
               </div>
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animateOnce={true}
-              animateIn="animate__fadeInUp"
-              className="animated">
+            </motion.div>
+            <motion.div
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 2,
+                delay: 1.5,
+              }}
+              initial={{ y: 400, opacity: 0 }}
+            >
               <div className="images__android">
                 <Image
                   src={require("../../public/photos/services/mobile/android-phone.png")}
                   alt="android phone"
                 />
               </div>
-            </AnimationOnScroll>
+            </motion.div>
           </div>
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInUp"
-            className="animated">
+          <motion.div
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 2,
+              delay: 1.5,
+            }}
+            initial={{ y: 400, opacity: 0 }}
+          >
             <div className="phones__container-pres pres">
               <div className="pres__item">
                 <h2 className="pres__item-title">iOS Development</h2>
@@ -143,7 +215,7 @@ export const Mobile = () => {
                 </p>
               </div>
             </div>
-          </AnimationOnScroll>
+          </motion.div>
           <div className="phones__container-images images images-mobile">
             <div className="images__ios">
               <Image
@@ -162,10 +234,16 @@ export const Mobile = () => {
       </section>
       <section className="technologies">
         <div className="technologies__info info">
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeIn"
-            className="animated">
+          <motion.div
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 2,
+              delay: 1.5,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <div className="info__text">
               <h2 className="info__text-title">Technologies we use</h2>
               <p className="info__text-desc">
@@ -173,11 +251,18 @@ export const Mobile = () => {
                 standards
               </p>
             </div>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInLeft"
-            className="animated">
+          </motion.div>
+          <motion.div
+            animate={{
+              opacity: 1,
+              left: 0,
+            }}
+            transition={{
+              duration: 2,
+              delay: 1.5,
+            }}
+            initial={{ opacity: 0, x: -150 }}
+          >
             <div className="info__tech">
               <div className="info__tech-block block">
                 <div className="block__icon">
@@ -232,7 +317,7 @@ export const Mobile = () => {
                 <p className="block__txt">Flutter</p>
               </div>
             </div>
-          </AnimationOnScroll>
+          </motion.div>
         </div>
         <div className="technologies__bg">
           <Image
@@ -247,16 +332,30 @@ export const Mobile = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <MobileSwitcher />
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -305,7 +404,7 @@ export const Mobile = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <Banner />
       <Footer />
     </div>

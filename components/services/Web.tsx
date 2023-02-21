@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import classNames from "classnames";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import angular from "../../public/photos/services/web/angular.svg";
 import vue from "../../public/photos/services/web/vue.svg";
@@ -62,20 +62,49 @@ export const Web = () => {
             </Link>
           </div>
           <div className="topic__web">
-            <h2 className="topic__web-big">
+            <motion.h2
+              className="topic__web-big"
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+              }}
+            >
               Web <span>Development</span>
-            </h2>
-            <div className="topic__web-image">
+            </motion.h2>
+            <motion.div
+              className="topic__web-image"
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+              }}
+              initial={{ opacity: 0 }}
+            >
               <Image src={laptop_new} alt="laptop" />
-            </div>
+            </motion.div>
           </div>
         </div>
-        <div className="topic__letter">
+        <motion.div
+          className="topic__letter"
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.3,
+          }}
+          initial={{ opacity: 0 }}
+        >
           <Image
             src={require("../../public/photos/services/web/w.png")}
             alt="w letter"
           />
-        </div>
+        </motion.div>
         <div className="topic__bg">
           <Image
             src={require("../../public/photos/services/web/m-bg.png")}
@@ -90,36 +119,38 @@ export const Web = () => {
         </div>
       </section>
       <section className="build">
-        <AnimationOnScroll
-          animateOnce={true}
-          animateIn="animate__fadeInUp"
-          className="animated">
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInUp"
-            className="animated">
-            <div className="build__desc">
-              <h2 className="build__desc-title">
-                We build websites <span>that sell</span>
-              </h2>
-              <div className="build__desc-content">
-                <p className="content-simple">
-                  “Do I need a site at all?” - Disturbing concerns among
-                  business owners who are afraid that their investments in the
-                  development of the website will not be redeemed.
-                </p>
-                <p className="content-simple">
-                  Today, when the market is full of a lot of products, users are
-                  particularly demanding, so even the slightest errors in the
-                  service can cost you loyalty and reputation of the company.
-                  And what about the lack of a professional website, or in
-                  general, its absence? Although the site no one will surprise
-                  you, but without it you will not build a reliable name.
-                </p>
-              </div>
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 2,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
+          <div className="build__desc">
+            <h2 className="build__desc-title">
+              We build websites <span>that sell</span>
+            </h2>
+            <div className="build__desc-content">
+              <p className="content-simple">
+                “Do I need a site at all?” - Disturbing concerns among business
+                owners who are afraid that their investments in the development
+                of the website will not be redeemed.
+              </p>
+              <p className="content-simple">
+                Today, when the market is full of a lot of products, users are
+                particularly demanding, so even the slightest errors in the
+                service can cost you loyalty and reputation of the company. And
+                what about the lack of a professional website, or in general,
+                its absence? Although the site no one will surprise you, but
+                without it you will not build a reliable name.
+              </p>
             </div>
-          </AnimationOnScroll>
-        </AnimationOnScroll>
+          </div>
+        </motion.div>
         <div className="build__bg">
           <Image
             className="build__bg-img"
@@ -128,10 +159,17 @@ export const Web = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="lifecycle">
           <h2 className="lifecycle__title">Our Web Development Lifecycle</h2>
           <WebLifecycle />
@@ -146,7 +184,8 @@ export const Web = () => {
                 onClick={() => {
                   clear();
                   requirements ? setRequirements(false) : setRequirements(true);
-                }}>
+                }}
+              >
                 <div className="forw__first">
                   <div className="forw__first-icon">
                     <Image src={requirementPhoto} alt="requirement" />
@@ -155,7 +194,8 @@ export const Web = () => {
                     className={classNames({
                       "forw__first-text": true,
                       whiter: requirements,
-                    })}>
+                    })}
+                  >
                     Requirement discovery
                   </p>
                 </div>
@@ -187,7 +227,8 @@ export const Web = () => {
                 onClick={() => {
                   clear();
                   design ? setDesign(false) : setDesign(true);
-                }}>
+                }}
+              >
                 <div className="forw__first">
                   <div className="forw__first-icon">
                     <Image src={designPhoto} alt="design" />
@@ -196,7 +237,8 @@ export const Web = () => {
                     className={classNames({
                       "forw__first-text": true,
                       whiter: design,
-                    })}>
+                    })}
+                  >
                     Design & Prototype creation
                   </p>
                 </div>
@@ -232,7 +274,8 @@ export const Web = () => {
                 onClick={() => {
                   clear();
                   dev ? setDev(false) : setDev(true);
-                }}>
+                }}
+              >
                 <div className="forw__first">
                   <div className="forw__first-icon">
                     <Image src={devPhoto} alt="dev" />
@@ -241,7 +284,8 @@ export const Web = () => {
                     className={classNames({
                       "forw__first-text": true,
                       whiter: dev,
-                    })}>
+                    })}
+                  >
                     Development & Testing
                   </p>
                 </div>
@@ -277,7 +321,8 @@ export const Web = () => {
                 onClick={() => {
                   clear();
                   launch ? setLaunch(false) : setLaunch(true);
-                }}>
+                }}
+              >
                 <div className="forw__first">
                   <div className="forw__first-icon">
                     <Image src={launchPhoto} alt="launch" />
@@ -286,7 +331,8 @@ export const Web = () => {
                     className={classNames({
                       "forw__first-text": true,
                       whiter: launch,
-                    })}>
+                    })}
+                  >
                     Launch & Measure
                   </p>
                 </div>
@@ -318,13 +364,19 @@ export const Web = () => {
             </li>
           </ul>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <section className="technologies">
         <div className="technologies__info info">
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeIn"
-            className="animated">
+          <motion.div
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 2,
+              delay: 1.5,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <div className="info__text">
               <h2 className="info__text-title">Technologies we use</h2>
               <p className="info__text-desc">
@@ -332,11 +384,18 @@ export const Web = () => {
                 JavaScript frameworks and modern back-end technologies.
               </p>
             </div>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animateOnce={true}
-            animateIn="animate__fadeInLeft"
-            className="animated">
+          </motion.div>
+          <motion.div
+            animate={{
+              opacity: 1,
+              left: 0,
+            }}
+            transition={{
+              duration: 2,
+              delay: 1.5,
+            }}
+            initial={{ opacity: 0, x: -150 }}
+          >
             <div className="info__tech">
               <div className="info__tech-block block">
                 <div className="block__icon">
@@ -375,7 +434,7 @@ export const Web = () => {
                 <p className="block__txt">Node</p>
               </div>
             </div>
-          </AnimationOnScroll>
+          </motion.div>
         </div>
         <div className="technologies__bg">
           <Image
@@ -384,10 +443,17 @@ export const Web = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="why">
           <div className="why__container">
             <h2 className="why__container-title">Why Got IT?</h2>
@@ -406,7 +472,7 @@ export const Web = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <section className="information">
         <div className="information__container">
           <div className="information__container-notitia notitia">
@@ -476,10 +542,17 @@ export const Web = () => {
           />
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -528,7 +601,7 @@ export const Web = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <Banner />
       <Footer />
     </div>

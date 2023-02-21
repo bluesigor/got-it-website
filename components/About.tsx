@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import { motion } from "framer-motion";
 
 import about_main from "../public/photos/about/about-main.svg";
 import new_me from "../public/photos/home/new-me.svg";
@@ -25,12 +25,22 @@ export const About = () => {
       <Header />
       <section className="aquintance__begin begin">
         <div className="begin__container">
-          <div className="begin__container-bg begin-mobile">
+          <motion.div
+            className="begin__container-bg begin-mobile"
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.5,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <Image
               src={require("../public/photos/about/about-main.png")}
               alt="about bg"
             />
-          </div>
+          </motion.div>
           <div className="begin__container-dsc dsc">
             <h2 className="dsc__title">
               Got IT specialists in digital solutions
@@ -49,15 +59,32 @@ export const About = () => {
             </Link>
           </div>
         </div>
-        <div className="begin__bg begin-desktop">
+        <motion.div
+          className="begin__bg begin-desktop"
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.7,
+            delay: 0.5,
+          }}
+          initial={{ opacity: 0 }}
+        >
           <Image className="begin__bg-photo" src={about_main} alt="about bg" />
-        </div>
+        </motion.div>
       </section>
       <section className="build">
-        <AnimationOnScroll
-          animateOnce={true}
-          animateIn="animate__fadeInUp"
-          className="animated">
+        <motion.div
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 5,
+            delay: 1.5,
+          }}
+          initial={{ y: 400, opacity: 0 }}
+        >
           <div className="build__desc">
             <h2 className="build__desc-title">Our goal</h2>
             <div className="build__desc-content">
@@ -74,7 +101,7 @@ export const About = () => {
               </p>
             </div>
           </div>
-        </AnimationOnScroll>
+        </motion.div>
         <div className="bd bd-desktop">
           <Image
             className="bd__img"
@@ -117,10 +144,17 @@ export const About = () => {
         </div>
       </section>
       <AboutCarousel />
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 5,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="build">
           <div className="build__back wd">
             <Image
@@ -142,11 +176,18 @@ export const About = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 5,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="flowbox">
           <div className="flowbox__container">
             <div className="flowbox__container-thing thing">
@@ -236,11 +277,18 @@ export const About = () => {
             />
           </div>
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 5,
+          delay: 1.5,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -282,7 +330,7 @@ export const About = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <Banner />
       <Footer />
     </div>

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-
-import rightArrow from "../../../assets/photos/about/right-arrow.svg";
-import leftArrow from "../../../assets/photos/about/left-arrow.svg";
-import "./AboutCarousel.scss";
 import classNames from "classnames";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { Values } from "@/core/types/Values";
 import { aboutValues } from "@/core/constants/about";
 import Image from "next/image";
+
+import rightArrow from "../../public/photos/about/right-arrow.svg";
+import leftArrow from "../../public/photos/about/left-arrow.svg";
 
 export const AboutCarousel = () => {
   const [ourValues, setOurValues] = useState<Values[]>([]);
@@ -40,7 +39,8 @@ export const AboutCarousel = () => {
                       setSelectedTwo(selectedTwo - 1);
                     }
                   }}
-                  className="swt__arrow">
+                  className="swt__arrow"
+                >
                   <Image
                     className="swt__arrow-img"
                     src={leftArrow}
@@ -56,7 +56,8 @@ export const AboutCarousel = () => {
                       setSlide(true);
                       setSlide(false);
                     }
-                  }}>
+                  }}
+                >
                   <Image
                     className="swt__arrow-img"
                     src={rightArrow}
@@ -73,7 +74,8 @@ export const AboutCarousel = () => {
                     sheet: true,
                     slide: slide,
                   })}
-                  key={value.id}>
+                  key={value.id}
+                >
                   <div className="sheet__items">
                     <div className="sheet__items-icon">
                       <Image src={value.icon} alt="icon" />

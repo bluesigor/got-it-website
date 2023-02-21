@@ -1,9 +1,17 @@
+import Head from "next/head";
 import React from "react";
 
 import { NewWebsite } from "../components/blog/NewWebsite";
 
-const the_launch_of_our_new_website_blog = () => {
-  return <NewWebsite />;
+const NewWebSiteBlog = () => {
+  return (
+    <>
+      <Head>
+        <title>Got It Agency: Blog about News, Development & Design</title>
+      </Head>
+      <NewWebsite />
+    </>
+  );
 };
 
-export default the_launch_of_our_new_website_blog;
+export default NewWebSiteBlog;

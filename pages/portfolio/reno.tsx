@@ -1,8 +1,8 @@
 import React from "react";
 import { Reno } from "../../components/Reno";
 
-const reno = () => {
+const RenoPage = () => {
   return <Reno />;
 };
 
-export default reno;
+export default RenoPage;

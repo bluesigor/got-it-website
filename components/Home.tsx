@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import { motion } from "framer-motion";
 
 import { Header } from "./additional/Header";
 
@@ -24,7 +24,18 @@ export const Home = () => {
       <Header />
       <section className="home__main main">
         <div className="main__container container">
-          <div className="container__bg">
+          <motion.div
+            className="container__bg"
+            animate={{
+              scale: 1,
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.5,
+            }}
+            initial={{ opacity: 0 }}
+          >
             <Image
               className="container__bg-img"
               src={require("../public/photos/home/main-gen.png")}
@@ -35,14 +46,14 @@ export const Home = () => {
               src={require("../public/photos/home/main-mob.png")}
               alt="main bg"
             />
-          </div>
+          </motion.div>
           <div className="container__info">
             <h1 className="container__info-title">
               Efficient digital solutions delivered on time
             </h1>
             <p className="container__info-desc">
               We`re a design and development agency, located in Eastern Europe
-              that creates and supports awesome web & mobile apps.{" "}
+              that creates and supports awesome web & mobile apps.
             </p>
             <Link href="/portfolio/" className="container__info-click">
               PORTFOLIO
@@ -50,10 +61,19 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      <motion.div
+        animate={{
+          x: 0,
+          y: 100,
+          scale: 1,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 4,
+          delay: 1,
+        }}
+        initial={{ x: 0, y: 0, scale: 0.3, opacity: 0 }}
+      >
         <section className="home__benefits benefits">
           <h2 className="benefits__title">Our benefits</h2>
           <p className="benefits__description">
@@ -99,11 +119,18 @@ export const Home = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 5,
+          delay: 2,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="home__help help">
           <h2 className="help__title">We are here to help you with</h2>
           <p className="help__desc">
@@ -114,7 +141,8 @@ export const Home = () => {
           <div className="help__items items">
             <Link
               href="/services/ui-ux-design/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
                 <Image
                   className="example__box-picture"
@@ -126,7 +154,8 @@ export const Home = () => {
             </Link>
             <Link
               href="/services/dedicated-team-services/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
                 <Image
                   className="example__box-picture"
@@ -138,7 +167,8 @@ export const Home = () => {
             </Link>
             <Link
               href="/services/mobile-development/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
                 <Image
                   className="example__box-picture"
@@ -150,7 +180,8 @@ export const Home = () => {
             </Link>
             <Link
               href="/services/web-development/"
-              className="help__items-example example">
+              className="help__items-example example"
+            >
               <span className="example__box">
                 <Image
                   className="example__box-picture"
@@ -162,11 +193,18 @@ export const Home = () => {
             </Link>
           </div>
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 5,
+          delay: 2,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="examples">
           <div className="examples__content">
             <div className="examples__content-texting texting">
@@ -180,11 +218,15 @@ export const Home = () => {
             <div className="examples__content-container">
               <div className="row__up">
                 <Link href="/portfolio/clinics/" className="row__up-small">
-                  <Image src={new_me} alt="NewMe Clinics" />
+                  <Image src={new_me} alt="NewMe Clinics" placeholder="blur" />
                   <p>NewMe Clinics</p>
                 </Link>
                 <Link href="/portfolio/holy-perogy/" className="row__up-big">
-                  <Image src={holy_perogy} alt="Holy Perogy" />
+                  <Image
+                    src={holy_perogy}
+                    alt="Holy Perogy"
+                    placeholder="blur"
+                  />
                   <p>Holy Perogy</p>
                 </Link>
               </div>
@@ -193,6 +235,7 @@ export const Home = () => {
                   <Image
                     src={require("../public/photos/examples/miia-shop.jpg")}
                     alt="Miia Shop"
+                    placeholder="blur"
                   />
                   <p className="box__title">Miia Shop</p>
                 </Link>
@@ -203,34 +246,55 @@ export const Home = () => {
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 8,
+          delay: 2,
+        }}
+        initial={{ y: 500, opacity: 0 }}
+      >
         <section className="home__carousel-desktop">
           <HomeCarousel />
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 8,
+          delay: 2,
+        }}
+        initial={{ y: 400, opacity: 0 }}
+      >
         <section className="home__carousel-mobile">
           <HomeCarouselMobile />
         </section>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateOnce={true}
-        animateIn="animate__fadeInUp"
-        className="animated">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 8,
+          delay: 2,
+        }}
+        initial={{ y: 500, opacity: 0 }}
+      >
         <section className="home__testimonials testimonials">
           <div className="testimonials__container">
             <div className="testimonials__container-exps expos">
               <h2 className="expos__gen">Testimonials</h2>
               <p className="expos__simple">
                 Clutch.co is a leading platform that conducts independent,
-                in-depth interviews of clients of tech services companies{" "}
+                in-depth interviews of clients of tech services companies
               </p>
             </div>
             <div className="testimonials__container-response resp">
@@ -241,11 +305,12 @@ export const Home = () => {
                 src="https://widget.clutch.co/widgets/get/4?ref_domain=got-it.agency&amp;uid=979763&amp;ref_path=/"
                 height="600px"
                 scrolling="no"
-                title="[iFrameSizer]iframe-0.8731522158075802:0:0:mouseleave:305:8844"></iframe>
+                title="[iFrameSizer]iframe-0.8731522158075802:0:0:mouseleave:305:8844"
+              ></iframe>
             </div>
           </div>
         </section>
-      </AnimationOnScroll>
+      </motion.div>
       <Banner />
       <Footer />
     </div>

@@ -1,8 +1,16 @@
 import { TopCompany } from "@/components/blog/TopCompany";
+import Head from "next/head";
 import React from "react";
 
-const got_it_agency_named_to_clutch_2019_top_eastern_european = () => {
-  return <TopCompany />;
+const TopCompanyPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Got It Agency: Blog about News, Development & Design</title>
+      </Head>
+      <TopCompany />
+    </>
+  );
 };
 
-export default got_it_agency_named_to_clutch_2019_top_eastern_european;
+export default TopCompanyPage;
