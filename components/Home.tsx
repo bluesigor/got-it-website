@@ -69,7 +69,7 @@ export const Home = () => {
           opacity: 1,
         }}
         transition={{
-          duration: 4,
+          duration: 2,
           delay: 1,
         }}
         initial={{ x: 0, y: 0, scale: 0.3, opacity: 0 }}
