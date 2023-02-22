@@ -77,7 +77,13 @@ import flame from "../public/photos/xpay/flame-icon.svg";
 import tech_break_desk from "../public/photos/xpay/tech-break-desc.svg";
 import tech_break_mob from "../public/photos/xpay/tech-break-mob.svg";
 import dino from "../public/photos/xpay/dino.svg";
+import alert from "../public/photos/xpay/alert-icon.svg";
 import tech_ellipsis from "../public/photos/xpay/tech-ellipses.svg";
+import contact from "../public/photos/xpay/contact-mob.svg";
+import verification from "../public/photos/xpay/verification.svg";
+import direction from "../public/photos/xpay/direction.svg";
+import footer_second from "../public/photos/xpay/footer-second.svg";
+import footer_third from "../public/photos/xpay/footer-third.svg";
 
 const Xpay = () => {
   return (
@@ -642,7 +648,32 @@ const Xpay = () => {
         </div>
         <Image src={dino} alt='dino' className="technical__dino" />
         <Image src={tech_break_mob} alt='tech_break_mob' className="technical__tech-break-mob" />
+        <div className="technical-icons">
+          <Image src={alert} alt='alert' className="technical-icons__item" />
+          <Image src={logout_icon} alt='dino' className="technical-icons__item" />
+        </div>
       </section>
+      <footer className="application-xpay__screens-footer screens-footer">
+        <div className="screens-footer-txt">
+          <span className="screens-footer-txt__title" >
+            Desktop/Tablet/Mobile
+          </span  >
+          <span className="screens-footer-txt__sub" >
+            30+ Screens
+          </span>
+        </div>
+        <div className="screens-footer-first">
+          <Image src={contact} alt='contact' className="screens-footer-first__contact" />
+          <Image src={verification} alt='verification' className="screens-footer-first__verification" />
+          <Image src={direction} alt='direction' className="screens-footer-first__direction" />
+        </div>
+        <div className="screens-footer-second">
+          <Image src={footer_second} alt='footer_second' className='screens-footer-second__logo' />
+        </div>
+        <div className="screens-footer-third">
+          <Image src={footer_third} alt='footer_third' className='screens-footer-third__logo' />
+        </div>
+      </footer>
     </div>
   );
 };
